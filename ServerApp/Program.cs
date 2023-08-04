@@ -4,10 +4,14 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using ServerApp.Repositories;
+using ServerApp.SignalR;
 
 var builder = WebApplication.CreateBuilder(args);
 var corsPolicy = "AllowAngularOrigins";
 // Add services to the container.
+
+// Add SignalR
+builder.Services.AddSignalR();
 
 // Add CORS
 builder.Services.AddCors(options =>
@@ -19,7 +23,9 @@ builder.Services.AddCors(options =>
                     "http://localhost:4200"
                 )
                 .AllowAnyHeader()
-                .AllowAnyMethod();
+                .AllowAnyMethod()
+                .AllowCredentials()
+                .SetIsOriginAllowed((hosts) => true);
         });
 });
 
@@ -65,6 +71,8 @@ app.UseCors(corsPolicy);
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+app.MapHub<NotificationHub>("/notification");
 
 app.MapControllers();
 
