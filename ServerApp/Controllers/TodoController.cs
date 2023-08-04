@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using ServerApp.Data.DTOs;
 using ServerApp.Data.Models;
 using ServerApp.Repositories;
+using ServerApp.SignalR;
 
 namespace ServerApp.Controllers
 {
@@ -10,10 +12,12 @@ namespace ServerApp.Controllers
     public class TodoController : ControllerBase
     {
         private readonly ITodoRepository _repo;
+        private IHubContext<NotificationHub, INotificationHub> _notificationHub;
 
-        public TodoController(ITodoRepository repo)
+        public TodoController(ITodoRepository repo, IHubContext<NotificationHub, INotificationHub> notificationHub)
         {
             _repo = repo;
+            _notificationHub = notificationHub;
         }
 
         [HttpGet]
@@ -31,6 +35,7 @@ namespace ServerApp.Controllers
                 Name = todo.Name
             };
             await _repo.AddTodo(newTodo);
+            await _notificationHub.Clients.All.SendNotificationAsync("Added Item Notification from Server");
             return Ok();
         }
 

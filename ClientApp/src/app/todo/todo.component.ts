@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Todo } from '../models/todo';
 import { environment } from 'src/environments/environment';
 import { NotificationService } from '../services/notification.service';
+import { SignalRService } from '../services/signalr.service';
 
 
 @Component({
@@ -16,7 +17,8 @@ export class TodoComponent {
   todos: Todo[] = [];
 
   constructor(private http: HttpClient,
-    private notificationService: NotificationService) { }
+    private notificationService: NotificationService,
+    private signalRService: SignalRService) { }
 
   ngOnInit() {
     this.getTodos();
@@ -57,6 +59,7 @@ export class TodoComponent {
     this.http.delete(`${this.apiUrl}/todo/${id}`).subscribe({
       next: () => {
         this.todos = this.todos.filter(t => t.id !== id);
+        this.signalRService.sendNotification("Item Deleted Notification from Client")
       },
       error: (e) => {
         this.notificationService.error(`Error ocurred, check console`);
