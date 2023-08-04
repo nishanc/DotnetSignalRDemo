@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <form class="add-todo-form">
+                <label for="todo">Add Todo Item</label>
+                <input type="text" id="todo" name="todo" [(ngModel)]="newTodo" />
+
+                <button (click)="addTodo()">Add</button>
+            </form>
+
+
+            <div class="todo-list">
+                <div class="list-item" *ngFor="let todo of todos">
+                    <span>{{ todo.name }}</span> &nbsp;&nbsp;
+                    <span class="delete-icon" (click)="deleteTodo(todo.id)">x</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

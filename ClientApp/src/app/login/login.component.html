@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" [(ngModel)]="username" />
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" [(ngModel)]="password" />
+
+                <button (click)="login()">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

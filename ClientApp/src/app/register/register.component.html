@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" [(ngModel)]="username" />
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" [(ngModel)]="password" />
+
+                <label for="group">Select Role:</label>
+                <select id="group" [(ngModel)]="selectedGroup" name="group">
+                  <option *ngFor="let group of userGroups" [value]="group.id">{{ group.groupName }}</option>
+                </select>
+                <button (click)="register()">Register</button>
+            </form>
+        </div>
+    </div>
+</div>

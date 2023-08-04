@@ -1,0 +1,8 @@
+<nav class="navbar">
+    <div class="navbar-brand">Demo App</div>
+    <div class="navbar-user">
+        <span *ngIf="username">Welcome, {{ username }}</span>
+        <button *ngIf="username" (click)="logout()" class="nav-button">Logout</button>
+        <button routerLink="/" class="nav-button">Home</button>
+    </div>
+</nav>

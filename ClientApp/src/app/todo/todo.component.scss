@@ -1,0 +1,30 @@
+.list-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+.list-item .delete-icon {
+    margin-left: auto;
+    color: red;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid red;
+}
+
+.todo-list {
+    margin-bottom: 20px;
+}
+
+.add-todo-form {
+    margin-bottom: 20px;
+}
