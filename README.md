@@ -1,4 +1,4 @@
-# Repository Name
+# Dotnet SignalR Demo
 
 [![Header Image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjuX5Xi6Yg0bHkJRQoS-ny7qeVPJ9tVQmVzZKh7We6t5XLg39P-oF8Fm48d5RZs70AkJp6JoqxbVrfMf0YfvMOHk-3FvKky5MXKOCqTltmLlbPWuTecKfyu85zNWKV1PRTJFKWCve-XsshNwCZwgoBn_D5ciYDr9mv7E_c5AfVy3iEbhgRcEilxFgOoIdWz/w630-h300/34_Header.jpg)](https://blog.nishanc.com/2023/04/blog-post.html)
 
