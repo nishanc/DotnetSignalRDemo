@@ -4,7 +4,7 @@
 
 ## Description
 
-Welcome to the Repository Name! This repository contains code related to SignalR implementation in a sample application. 
+Welcome to the Dotnet SignalR Demo! This repository contains code related to SignalR implementation in a sample application. 
 
 ## What is SignalR?
 
