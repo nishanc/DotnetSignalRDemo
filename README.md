@@ -1,6 +1,6 @@
 # Dotnet SignalR Demo
 
-[![Header Image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjuX5Xi6Yg0bHkJRQoS-ny7qeVPJ9tVQmVzZKh7We6t5XLg39P-oF8Fm48d5RZs70AkJp6JoqxbVrfMf0YfvMOHk-3FvKky5MXKOCqTltmLlbPWuTecKfyu85zNWKV1PRTJFKWCve-XsshNwCZwgoBn_D5ciYDr9mv7E_c5AfVy3iEbhgRcEilxFgOoIdWz/w630-h300/34_Header.jpg)](https://blog.nishanc.com/2023/04/blog-post.html)
+[![Header Image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgi6pj3uOsvUT6QzZKYOd245gzUTNWkBkt1BR8lvY3O3xBcSUcmI4mgiqBcYwHDSulBHJGUV1gY9BT01CcYczeGoWkm27aEznGxW_PRyCUML5_9o-d35pMW30eAHQF48mGr0hfgDZ8sJJL5qovPgXQVc5kAaJYX7YWHzZPCtogJ0c4pXrdeg2Kqfwq1IpcY/w640-h300/34_Header%20copy.jpg)](https://blog.nishanc.com/2023/08/signalr-notifications-in-dotnet7-and-angular.html)
 
 ## Description
 
@@ -37,7 +37,7 @@ To get started with the code in this repository, follow these steps:
 3. Open and explore the code in your preferred code editor.
 4. Run the application and see SignalR in action!
 
-### For more detailed instructions and explanations, please refer to the related blog post [here](https://blog.nishanc.com/2023/04/blog-post.html).
+### For more detailed instructions and explanations, please refer to the related blog post [here](https://blog.nishanc.com/2023/08/signalr-notifications-in-dotnet7-and-angular.html).
 
 ## License
 
