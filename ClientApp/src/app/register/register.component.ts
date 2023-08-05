@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit{
         this.router.navigate(['/login']); // redirect to Login
       },
       error: (e) => {
-        this.notificationService.error(`Error ocurred, check console`);
+        this.notificationService.error(`Error occurred, check console`);
         console.error(e);
       }
     });
@@ -51,7 +51,7 @@ export class RegisterComponent implements OnInit{
         this.selectedGroup = this.userGroups[0].id;
       },
       error: (e) => {
-        this.notificationService.error(`Error ocurred, check console`);
+        this.notificationService.error(`Error occurred, check console`);
         console.error(e);
       }
     });

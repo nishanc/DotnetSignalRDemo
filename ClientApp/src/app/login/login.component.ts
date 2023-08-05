@@ -42,7 +42,7 @@ export class LoginComponent {
         this.router.navigate(['/todo']); // redirect to TodoComponent
       },
       error: (e) => {
-        this.notificationService.error(`Error ocurred, check console`);
+        this.notificationService.error(`Error occurred, check console`);
         console.error(e);
       }
     });

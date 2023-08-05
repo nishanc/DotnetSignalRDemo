@@ -42,7 +42,7 @@ export class TodoComponent {
         this.todos = todos;
       },
       error: (e) => {
-        this.notificationService.error(`Error ocurred, check console`);
+        this.notificationService.error(`Error occurred, check console`);
         console.error(e);
       }
     });
@@ -61,7 +61,7 @@ export class TodoComponent {
         this.newTodo = '';
       },
       error: (e) => {
-        this.notificationService.error(`Error ocurred, check console`);
+        this.notificationService.error(`Error occurred, check console`);
         console.error(e);
       }
     });
@@ -71,10 +71,10 @@ export class TodoComponent {
     this.http.delete(`${this.apiUrl}/todo/${id}`).subscribe({
       next: () => {
         this.todos = this.todos.filter(t => t.id !== id);
-        this.signalRService.sendNotification("Item Deleted Notification from Client")
+        this.signalRService.sendNotification("Item Deleted Notification from Client");
       },
       error: (e) => {
-        this.notificationService.error(`Error ocurred, check console`);
+        this.notificationService.error(`Error occurred, check console`);
         console.error(e);
       }
     });
