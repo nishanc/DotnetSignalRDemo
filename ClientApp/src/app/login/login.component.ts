@@ -6,6 +6,7 @@ import jwt_decode from 'jwt-decode';
 import { Token } from '../models/token';
 import { environment } from 'src/environments/environment';
 import { NotificationService } from '../services/notification.service';
+import { SignalRService } from '../services/signalr.service';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,8 @@ export class LoginComponent {
     private http: HttpClient,
     private router: Router,
     private localStorageService: LocalStorageService,
-    private notificationService: NotificationService) { }
+    private notificationService: NotificationService,
+    private signalRService: SignalRService) { }
 
   login() {
     const body = { username: this.username, password: this.password };
@@ -36,7 +38,8 @@ export class LoginComponent {
       next: (response) => {
         const tokenInfo = this.getDecodedAccessToken(response.tokenString); // decode token
         const user = tokenInfo.unique_name;
-
+        const role = tokenInfo.role;
+        this.signalRService.joinGroupFeed(role);
         this.localStorageService.setItem('user', user);
         this.notificationService.success("Logged in");
         this.router.navigate(['/todo']); // redirect to TodoComponent

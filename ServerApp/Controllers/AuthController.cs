@@ -68,7 +68,8 @@ namespace ServerApp.Controllers
                 {
                     Subject = new ClaimsIdentity(new Claim[]{
                         new Claim(ClaimTypes.NameIdentifier,userFromRepo.Id.ToString()),
-                        new Claim(ClaimTypes.Name, userFromRepo.Username)
+                        new Claim(ClaimTypes.Name, userFromRepo.Username),
+                        new Claim(ClaimTypes.Role, userFromRepo.UserGroup.GroupName)
                     }),
                     Expires = DateTime.Now.AddDays(1),
                     SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha512Signature)

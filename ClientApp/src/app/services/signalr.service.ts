@@ -34,4 +34,18 @@ export class SignalRService {
   public sendNotification(message: string): void {
     this.hubConnection.invoke('SendNotificationToUserAsync', message);
   }
+
+  public joinGroupFeed(groupName: string) {
+    return new Promise((resolve, reject) => {
+      this.hubConnection
+      .invoke("AddToGroupAsync", groupName)
+      .then(() => {
+        console.log("Added to group");
+        return resolve(true);
+      }, (err: any) => {
+        console.log(err);
+        return reject(err);
+      });
+    })
+  }
 }

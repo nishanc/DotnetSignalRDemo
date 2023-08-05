@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
+using ServerApp.Data.Constants;
 using ServerApp.Data.DTOs;
 using ServerApp.Data.Models;
 using ServerApp.Repositories;
@@ -35,7 +36,9 @@ namespace ServerApp.Controllers
                 Name = todo.Name
             };
             await _repo.AddTodo(newTodo);
-            await _notificationHub.Clients.All.SendNotificationAsync("Added Item Notification from Server");
+            // await _notificationHub.Clients.All.SendNotificationAsync("Added Item Notification from Server");
+            await _notificationHub.Clients.Group(UserGroups.Administrator)
+                .SendNotificationAsync("Added Item Notification from Server");
             return Ok();
         }
 

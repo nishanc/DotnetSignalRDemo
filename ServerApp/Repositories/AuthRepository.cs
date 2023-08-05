@@ -14,7 +14,7 @@ namespace ServerApp.Repositories
         }
         public async Task<User?> Login(string username, string password)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(x => x.Username == username); //Get user from database.
+            var user = await _context.Users.Include(x => x.UserGroup).FirstOrDefaultAsync(x => x.Username == username); //Get user from database.
             if (user == null)
                 return null; // User does not exist.
 
