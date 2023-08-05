@@ -14,6 +14,7 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
 import { SignalRService } from './services/signalr.service';
 import { LocalStorageService } from './services/local-storage.service';
 import { NotificationService } from './services/notification.service';
+import { EventHandlerService } from './services/event-handler.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NotificationService } from './services/notification.service';
   providers: [
     LocalStorageService,
     NotificationService,
-    SignalRService
+    SignalRService,
+    EventHandlerService
   ],
   bootstrap: [AppComponent]
 })

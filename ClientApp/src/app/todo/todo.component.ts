@@ -4,6 +4,7 @@ import { Todo } from '../models/todo';
 import { environment } from 'src/environments/environment';
 import { NotificationService } from '../services/notification.service';
 import { SignalRService } from '../services/signalr.service';
+import { EventHandlerService } from '../services/event-handler.service';
 
 
 @Component({
@@ -18,7 +19,18 @@ export class TodoComponent {
 
   constructor(private http: HttpClient,
     private notificationService: NotificationService,
-    private signalRService: SignalRService) { }
+    private signalRService: SignalRService,
+    private eventHandlerService: EventHandlerService) {
+      this.eventHandlerService.notificationEvent.subscribe((data: string) => {
+        this.onNotificationEvent(data);
+      });
+    }
+
+  onNotificationEvent(data: string) {
+    if(data === "refresh"){
+      this.getTodos();
+    }
+  }
 
   ngOnInit() {
     this.getTodos();
